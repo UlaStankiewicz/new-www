@@ -1,0 +1,45 @@
+@import "variables";
+
+.page-career {
+  .we-hire {
+    background-image: linear-gradient(
+        180deg,
+        rgba(35, 7, 51, 0.25),
+        rgba(48, 7, 75, 0.78)
+      ),
+      url("#{$images-url-base}/images/b-88Light_gradient2000.png?resize.imageType=jpeg"),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+    background-color: $dark;
+    background-position: 0 40%;
+    background-size: cover;
+  }
+
+  .open-positions-top {
+    margin-top: 6em;
+
+    .level-item {
+      margin-bottom: 2em;
+    }
+  }
+
+  .bright-minds {
+    background-image: url(/images/b-55_light_orange.jpg);
+    background-color: $primary;
+    background-size: cover;
+    background-position: 0 0;
+    background-attachment: fixed;
+    transition: opacity 200ms ease;
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+
+  .open-positions {
+    .open-position {
+      margin-bottom: 2em;
+    }
+  }
+
+  a.has-text-dark:hover {
+    color: $bright-violet !important;
+  }
+}

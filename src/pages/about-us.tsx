@@ -1,0 +1,252 @@
+import React, { useState } from "react"
+import { Helmet } from "react-helmet"
+import Layout from "../components/layout"
+import TeamMembers from "../components/subcomponents/TeamMembers"
+
+const AboutUsPage = () => {
+  const [currentTab, setCurrentTab] = useState(0)
+  return (
+    <Layout>
+      <Helmet>
+        <title>About us - our values, team and approach</title>
+        <meta
+          name="description"
+          content="Information about our team, core values, business process"
+        />
+      </Helmet>
+      <div className="container">
+        <section className="section">
+          <p className="content">
+            Bright Inventions is a software consulting studio based in Gdansk,
+            Poland. Since 2012 we have built software for more than 40
+            businesses worldwide. Our expertise in mobile, web, blockchain and
+            IoT systems has been highly appreciated by our clients from UK,
+            Germany, Netherlands, Norway, Israel and more.
+          </p>
+
+          <div className="tabs" data-tabs-content=".tab-content">
+            <ul>
+              <li
+                className={currentTab === 0 ? "is-active" : ""}
+                onClick={() => setCurrentTab(0)}
+              >
+                <a>the process</a>
+              </li>
+              <li
+                className={currentTab === 1 ? "is-active" : ""}
+                onClick={() => setCurrentTab(1)}
+              >
+                <a>core values</a>
+              </li>
+              <li
+                className={currentTab === 2 ? "is-active" : ""}
+                onClick={() => setCurrentTab(2)}
+              >
+                <a>team</a>
+              </li>
+            </ul>
+          </div>
+
+          {currentTab === 0 && (
+            <div className="tab-content content">
+              <h1 className="title">How we work?</h1>
+              <p>
+                We enjoy helping our customers throughout all of the software
+                delivery phases: from the ideation, through requirements
+                elicitation, graphic design, project management, software
+                development, quality assurance and maintenance.
+              </p>
+              <div className="level content">
+                <div className="level-left">
+                  <div className="level-item">
+                    <figure className="image is-150x150">
+                      <img src="/images/workshop.svg" />
+                    </figure>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="subtitle">Workshop</h3>
+                  <p>
+                    It's​ ​our​ ​preference​ ​to​ ​start​ ​a​ ​project​ ​with​
+                    ​a​ ​few​ ​day workshop​ ​(either​ ​at​ ​our​ office​ ​or​
+                    ​at​ ​client's)​ ​in​ ​order​ ​to​ ​get to​ ​know​ ​each​
+                    ​other,​ ​discuss​ ​the​ ​details​ ​of​ ​the​ ​project,​
+                    ​divide responsibilities​ ​and​ ​establish​ ​communication​
+                    ​channels.
+                  </p>
+                </div>
+              </div>
+              <div className="level content">
+                <div className="level-left">
+                  <div className="level-item">
+                    <figure className="image is-150x150">
+                      <img src="/images/workorganisation.svg" />
+                    </figure>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="subtitle">Work organisation</h3>
+                  <p>
+                    Depending​ ​on​ ​a mutual​ ​decision​ ​we​ ​organize​ ​the​
+                    ​work around​ ​either​ ​Scrum​ ​or​ ​Kanban​ ​methodology.​
+                    ​We​ ​are​ ​big fans​ ​of​ ​JIRA​ ​and​ ​Trello​ ​and​
+                    ​usually​ ​suggest​ ​them​ ​as​ ​the most​ ​fitting​ ​PM​
+                    ​tools.
+                  </p>
+                </div>
+              </div>
+              <div className="level content">
+                <div className="level-left">
+                  <div className="level-item">
+                    <figure className="image is-150x150">
+                      <img src="/images/continuousintegration.svg" />
+                    </figure>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="subtitle">Continuous integration</h3>
+                  <p>
+                    Central​ ​to​ ​each​ ​our​ ​project​ ​is​ ​continuous​
+                    ​integration​ ​and delivery​ ​system​ ​(we​ ​prefer​
+                    ​TeamCity)​ ​so​ ​that​ ​every​ ​commit results​ ​in​ ​a​
+                    ​build,​ ​entire​ ​test​ ​suite​ ​execution​ ​and
+                    deployment​ ​to​ ​the​ ​test​ ​environment,​ ​TestFlight​
+                    ​or​ ​Google Play.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+          {currentTab === 1 && (
+            <div className="tab-content content">
+              <h1 className="title">What we value</h1>
+              <p>
+                We believe that bright ideas and bright products come out of
+                bright minds. The success of projects we do is completely
+                sustained by our team and values we are committed to. We work
+                together making the most of experience and expertise we have.
+              </p>
+
+              <div className="level content">
+                <div className="level-left">
+                  <div className="level-item">
+                    <figure className="image is-150x150">
+                      <img src="/images/responsibility.svg" />
+                    </figure>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="subtitle">Responsibility</h3>
+                  <p>
+                    We support and share responsibility with the members of our
+                    team. We also actively take responsibility for our own
+                    self-development. Integrity, thoughtfulness and a sense of
+                    urgency is a crucial and elemental part of our success.
+                    Everything is everyone’s responsibility and we own our
+                    collective results together.
+                  </p>
+                </div>
+              </div>
+
+              <div className="level content">
+                <div className="level-left">
+                  <div className="level-item">
+                    <figure className="image is-150x150">
+                      <img src="/images/flexibility.svg" />
+                    </figure>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="subtitle">Flexibility</h3>
+                  <p>
+                    We balance ambition with flexibility because what matters is
+                    the final result. We are nimble. We evolve and adapt. People
+                    who work here are not afraid of taking risk and making
+                    mistakes as long as we learn from them. We encourage the
+                    diversity of thought.
+                  </p>
+                </div>
+              </div>
+
+              <div className="level content">
+                <div className="level-left">
+                  <div className="level-item">
+                    <figure className="image is-150x150">
+                      <img src="/images/team-work.svg" />
+                    </figure>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="subtitle">Teamwork</h3>
+                  <p>
+                    It is only through teamwork that we achieve brightness. We
+                    are committed to helping our customers by working together
+                    with equal parts of humility and ambition. We know each
+                    others' strengths and we also can ask for help when we need.
+                    We work together to bring our passions and expertise to make
+                    Bright Inventions the best place it can be.
+                  </p>
+                </div>
+              </div>
+
+              <div className="level content">
+                <div className="level-left">
+                  <div className="level-item">
+                    <figure className="image is-150x150">
+                      <img src="/images/positive-attitude.svg" />
+                    </figure>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="subtitle">Positive attitude</h3>
+                  <p>
+                    We love what we do and the people around us. In fact, we
+                    believe that happy people are more motivated, efficient and
+                    creative, so we bring a positive attitude to everything we
+                    do. It's good for you, for the team, and for our customers.
+                  </p>
+                </div>
+              </div>
+
+              <div className="level content">
+                <div className="level-left">
+                  <div className="level-item">
+                    <figure className="image is-150x150">
+                      <img src="/images/client_oriented.svg" />
+                    </figure>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="subtitle">Client orientation</h3>
+                  <p>
+                    We are only successful if our clients are - and that drives
+                    everything we do. Clients trust us to build things that work
+                    and we take that seriously. Our team will overcome
+                    obstacles, find solutions and deliver results on time. Every
+                    action we take enables our clients to make a bigger impact
+                    on the world.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+          {currentTab === 2 && (
+            <div className="tab-content content">
+              <h1 className="title">Meet the bright team</h1>
+              <p>
+                We are a team of skilled and talented specialists: mobile, web
+                and backend developers, UI and UX designers, product managers
+                and marketers, who understand what makes bright digital products
+                that build engagement and loyalty.
+              </p>
+              {/* {% include _team_members.html %} */}
+              <TeamMembers />
+            </div>
+          )}
+        </section>
+      </div>
+    </Layout>
+  )
+}
+
+export default AboutUsPage

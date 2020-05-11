@@ -1,0 +1,31 @@
+{
+  "name": "bright-blog",
+  "private": true,
+  "devDependencies": {
+    "@types/cheerio": "^0.22.11",
+    "@types/command-line-args": "^5.0.0",
+    "@types/jszip": "^3.1.6",
+    "@types/lodash": "^4.14.138",
+    "@types/minimatch": "^3.0.3",
+    "@types/node": "^12.12.4",
+    "@types/yaml": "^1.0.2",
+    "axios": "^0.19.0",
+    "bulma": "^0.7.5",
+    "bulma-carousel": "^4.0.4",
+    "cheerio": "^1.0.0-rc.3",
+    "command-line-args": "^5.1.1",
+    "fast-levenshtein": "^2.0.6",
+    "front-matter": "^3.0.2",
+    "jszip": "^3.2.2",
+    "lodash": "^4.17.15",
+    "minimatch": "^3.0.4",
+    "rimraf": "^2.6.3",
+    "website-scraper": "^4.0.1",
+    "yaml": "^1.6.0"
+  },
+  "scripts": {
+    "serve": "bundle exec jekyll serve --incremental",
+    "update-template": "node $NODE_DEBUG_OPTION ./update-template.js --template-zip '/Users/piotr/Downloads/brightproject.webflow (1).zip' --config '/Users/piotr/Downloads/brightproject.webflow (1)/webflow-config.json'",
+    "postinstall": "cp -r ./node_modules/bulma* _sass/"
+  }
+}

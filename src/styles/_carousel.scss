@@ -1,0 +1,14 @@
+
+
+.carousel {
+  padding: 0.5rem;
+  overflow: hidden;
+  .carousel-item {
+    padding: 2rem;
+  }
+
+  .slider-navigation-previous, .slider-navigation-next {
+    background: none;
+  }
+
+}

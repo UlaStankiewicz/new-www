@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<div class="container">
+    <form class="section" data-form-type="job">
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="e.g Alex Smith" name="name" maxlength="256" required>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" name="email" maxlength="256" required>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+                <textarea class="textarea" placeholder="Your message" maxlength="5000" name="message" required></textarea>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="file has-name">
+                <label class="file-label">
+                    <input class="file-input" type="file" name="cv" accept=".pdf">
+                    <span class="file-cta">
+                      <span class="file-icon">📄</span>
+                      <span class="file-label">Upload CV</span>
+                    </span>
+                    <span class="file-name"/>
+                </label>
+            </div>
+            <p class="help">Max file size 10MB.</p>
+        </div>
+
+        <div class="field">
+            <label class="checkbox">
+                <input type="checkbox" name="accept-policy" required value="yes">
+                I accept the <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+            </label>
+        </div>
+
+        <div class="field">
+            <input type="submit" class="button is-primary" value="Submit">
+            <p class="help is-success form-success">Thank you! Your submission has been received!</p>
+            <p class="help is-danger form-error">Oops! Something went wrong while submitting the form.</p>
+        </div>
+        {% include _back_button.html url="/career#open-positions" label="Open positions" %}
+    </form>
+</div>

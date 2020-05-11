@@ -1,0 +1,216 @@
+[
+  {
+    "id": "adam",
+    "name": "Adam Bar",
+    "web": "https://whatwebcando.today",
+    "email": "adam.bar@brightinventions.pl",
+    "bio": "The Web Guy @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/adam_small.jpg",
+    "twitter": "NOtherDev",
+    "github": "NOtherDev",
+    "stackoverflow": "142827/notherdev"
+  },
+  {
+    "id": "piotr",
+    "name": "Piotr Mionskowski",
+    "web": "https://miensol.pl",
+    "email": "piotr.mionskowski@brightinventions.pl",
+    "bio": "TDD fan eager to learn new things",
+    "avatar": "https://brightinventions.pl/images/piotr_small.png",
+    "twitter": "miensol",
+    "github": "miensol",
+    "stackoverflow": "155213/miensol",
+    "crosspost": "https://miensol.pl/:categories/:year/:month/:day/:title.html"
+  },
+  {
+    "id": "daniel",
+    "name": "Daniel Makurat",
+    "email": "daniel.makurat@brightinventions.pl",
+    "bio": "building apps @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/daniel_small.png",
+    "github": "danielmakurat"
+  },
+  {
+    "id": "mateusz",
+    "name": "Mateusz Klimczak",
+    "email": "mateusz.klimczak@brightinventions.pl",
+    "bio": "Pushing things forward @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/mateuszklimczak_small.png",
+    "twitter": "Klimczak_M",
+    "github": "KlimczakM",
+    "stackoverflow": "1570496/klimczak-m"
+  },
+  {
+    "id": "michal",
+    "name": "Michał Łukasiewicz",
+    "email": "michal.lukasiewicz@brightinventions.pl",
+    "bio": "co-founder @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/michal.jpg",
+    "twitter": "mgamer",
+    "github": "mgamer",
+    "stackoverflow": "59666/mgamer"
+  },
+  {
+    "id": "mateuszklimek",
+    "name": "Mateusz Klimek",
+    "email": "mateusz.klimek@brightinventions.pl",
+    "bio": "Software Engineer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/mateuszklimek_small.png",
+    "github": "mklimek",
+    "stackoverflow": "870674/mklimek"
+  },
+  {
+    "id": "eliasz",
+    "name": "Eliasz Sawicki",
+    "web": "http://eluss.github.io/",
+    "email": "eliasz.sawicki@brightinventions.pl",
+    "bio": "Software Engineer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/eliasz_small.png",
+    "github": "eluss"
+  },
+  {
+    "id": "kwysocki",
+    "name": "Kamil Wysocki",
+    "web": "https://wysockikamil.com",
+    "email": "kamil.wysocki@brightinventions.pl",
+    "bio": "Software Engineer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/kamil_small.png",
+    "github": "kamwysoc",
+    "twitter": "kamwysoc",
+    "stackoverflow": "5433235/k8mil"
+  },
+  {
+    "id": "azabost",
+    "name": "Andrzej Zabost",
+    "email": "andrzej.zabost@brightinventions.pl",
+    "bio": "Android Developer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/andrzej.jpg",
+    "web": "https://azabost.com",
+    "github": "azabost",
+    "stackoverflow": "6761823/andrzej-zabost",
+    "crosspost": "https://azabost.com/:title"
+  },
+  {
+    "id": "ula",
+    "name": "Ula Stankiewicz",
+    "email": "ula.stankiewicz@brightinventions.pl",
+    "bio": "Employer Branding Specialist @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/ula_stankiewicz.jpg"
+  },
+  {
+    "id": "agnieszka",
+    "name": "Agnieszka Olszewska",
+    "email": "agnieszka.olszewska@brightinventions.pl",
+    "bio": "Software Engineer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/agnieszka.png"
+  },
+  {
+    "id": "monika",
+    "name": "Monika Niegrzybowska",
+    "email": "monika.niegrzybowska@brightinventions.pl",
+    "bio": "Software Developer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/monika.jpg"
+  },
+  {
+    "id": "piotr_l",
+    "name": "Piotr Łupiński",
+    "email": "piotr.lupinski@brightinventions.pl",
+    "bio": "Android Developer @ Bright Inventions",
+    "web": "http://exp.flamaster2.com",
+    "avatar": "https://brightinventions.pl/images/piotrl.png"
+  },
+  {
+    "id": "pawel",
+    "name": "Paweł Papkiewicz",
+    "email": "pawel.papkiewicz@brightinventions.pl",
+    "bio": "Software Engineer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/pawel.jpg",
+    "github": "papkie"
+  },
+  {
+    "id": "radek",
+    "name": "Radek Pieczątkiewicz",
+    "email": "radek.pieczatkiewicz@brightinventions.pl",
+    "bio": "Software Engineer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/radek.jpg"
+  },
+  {
+    "id": "grzesiek",
+    "name": "Grzegorz Cieśla",
+    "email": "grzegorz.ciesla@brightinventions.pl",
+    "bio": "Software Developer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/grzesiek.png"
+  },
+  {
+    "id": "ivan",
+    "name": "Ivan Menshykov",
+    "email": "ivan.menshykov@brightinventions.pl",
+    "bio": "Software Developer @ Bright Inventions",
+    "github": "janczer",
+    "avatar": "https://brightinventions.pl/images/ivan_small.png"
+  },
+  {
+    "id": "agnieszka_h",
+    "name": "Agnieszka Hayashida",
+    "email": "agnieszka.hayashida@brightinventions.pl",
+    "bio": "Sales Manager @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/agnieszka_h.jpg"
+  },
+  {
+    "id": "patryk",
+    "name": "Patryk Huzarski",
+    "email": "patryk.huzarski@brightinventions.pl",
+    "bio": "Software Developer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/patryk_huzarski.jpg",
+    "twitter": "pathuzarski",
+    "github": "phuzarski"
+  },
+  {
+    "id": "szymek",
+    "name": "Szymon Miloch",
+    "email": "szymon.miloch@brightinventions.pl",
+    "bio": "Software Developer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/szymon_miloch.jpg",
+    "github": "milszym"
+  },
+  {
+    "id": "kasia",
+    "name": "Kasia Łukasiewicz",
+    "email": "katarzyna.lukasiewicz@brightinventions.pl",
+    "bio": "Project Manager @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/kasia_lukasiewicz.jpg",
+    "github": "bufta"
+  },
+  {
+    "id": "lukasz",
+    "name": "Łukasz Reszetow",
+    "email": "lukasz.reszetow@brightinventions.pl",
+    "bio": "Android Developer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/lukasz.jpg"
+  },
+  {
+    "id": "radeks",
+    "name": "Radosław Słowiński",
+    "email": "radek.slowinski@brightinventions.pl",
+    "bio": "Software Engineer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/radoslaw.jpg",
+    "crosspost": "https://ares97.github.io/",
+    "twitter": "aresss97"
+  },
+  {
+    "id": "olo",
+    "name": "Aleksander Wielgórski",
+    "email": "aleksander.wielgorski@bright.dev",
+    "bio": "Software Engineer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/aleksander_wielgorski.jpeg",
+    "github": "olo2552"
+  },
+  {
+    "id": "tomek",
+    "name": "Tomasz Gęsior",
+    "email": "tomasz.gesior@brightinventions.pl",
+    "bio": "Blockchain Developer @ Bright Inventions",
+    "avatar": "https://brightinventions.pl/images/tomek.jpeg",
+    "github": "tgesior"
+  }
+]

@@ -1,0 +1,23 @@
+address {
+  font-style: normal;
+}
+
+.is-normal {
+  font-style: normal !important;
+}
+
+@include tablet-only {
+  .title {
+    font-size: 60px;
+    line-height: 150%;
+    font-weight: 700;
+  }
+}
+
+@include desktop {
+  .title {
+    font-size: 70px;
+    line-height: 150%;
+    font-weight: 700;
+  }
+}

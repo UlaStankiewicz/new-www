@@ -1,0 +1,81 @@
+@import "common";
+@import "bulma-carousel/src/sass/index";
+
+@include desktop {
+  .title {
+    font-size: 80px;
+    line-height: 150%;
+    font-weight: 700;
+  }
+}
+
+.hero {
+  .hero-body {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.we-deliver,
+.experts-in,
+.success-stories {
+  .hero-body {
+    padding-bottom: 6em;
+  }
+}
+
+.we-deliver {
+  background-color: $white;
+  .title {
+    margin-bottom: 1em;
+  }
+  .title {
+    span {
+      color: $primary;
+    }
+  }
+  .is-ula-with-andrzej-background {
+    //background-position: 0 40%;
+    //background-size: contain;
+    //background-repeat: no-repeat;
+    //background-image: url(/images/ula_with_andrzej.jpg);
+    //height: 975px;
+  }
+
+  .fintech-image {
+    width: 150px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+
+.hero-body h1 {
+  color: $black;
+}
+
+.experts-in {
+  .subtitle,
+  .button {
+    font-weight: 500;
+  }
+
+  .button {
+    margin-top: 2rem;
+  }
+}
+
+.bright-minds,
+.why-us {
+  min-height: 25rem;
+}
+
+.bright-minds {
+  background-image: url("#{$images-url-base}/images/b-552_light_purple.jpg?resize.imageType=jpeg");
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed;
+  transition: opacity 200ms ease;
+}
+
+.success-stories {
+}

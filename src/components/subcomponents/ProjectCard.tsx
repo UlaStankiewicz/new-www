@@ -13,7 +13,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  console.log(project)
   return (
     <div className="card project-card">
       <div className="card-content has-text-centered">

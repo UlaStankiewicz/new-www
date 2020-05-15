@@ -1,14 +1,10 @@
+import { graphql } from "gatsby"
 import React from "react"
-import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
-// import Image from "../components/image"
-// import SEO from "../components/seo"
-
-import "../styles/_page-index.scss"
 import ProjectCard, {
   ProjectGraphql,
 } from "../components/subcomponents/ProjectCard"
+import "../styles/_page-index.scss"
 
 const IndexPage = ({
   data: {
@@ -33,7 +29,7 @@ const IndexPage = ({
             </script> */
   }
   return (
-    <Layout>
+    <Layout className="page-index">
       <section className="hero we-deliver">
         <div className="hero-body">
           <div className="container">

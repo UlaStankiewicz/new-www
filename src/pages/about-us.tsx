@@ -1,19 +1,16 @@
 import React, { useState } from "react"
-import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
+import HelmetWrapper from "../components/subcomponents/HelmetWrapper"
 import TeamMembers from "../components/subcomponents/TeamMembers"
 
 const AboutUsPage = () => {
   const [currentTab, setCurrentTab] = useState(0)
   return (
     <Layout>
-      <Helmet>
-        <title>About us - our values, team and approach</title>
-        <meta
-          name="description"
-          content="Information about our team, core values, business process"
-        />
-      </Helmet>
+      <HelmetWrapper
+        title="About us - our values, team and approach"
+        description="Information about our team, core values, business process"
+      />
       <div className="container">
         <section className="section">
           <p className="content">

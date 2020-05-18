@@ -9,7 +9,7 @@ interface HelmetWrapperProps {
 const HelmetWrapper: React.FC<HelmetWrapperProps> = props => {
   return (
     <Helmet>
-      <title>{props.title}</title>
+      <title>{props.title} | Bright Inventions</title>
       {props.description && (
         <meta name="description" content={props.description} />
       )}

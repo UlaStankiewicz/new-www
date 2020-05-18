@@ -30,9 +30,9 @@ const ProjectsPage = ({
           </div>
           <div>
             <div className="columns is-multiline">
-              {edges.map((v, index) => (
+              {edges.map(({ node: { frontmatter } }, index) => (
                 <div className="column is-one-third" key={index + "project"}>
-                  <ProjectCard project={v.node.frontmatter as ProjectGraphql} />
+                  <ProjectCard project={frontmatter as ProjectGraphql} />
                 </div>
               ))}
             </div>

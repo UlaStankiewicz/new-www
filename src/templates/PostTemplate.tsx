@@ -1,19 +1,51 @@
+import { graphql } from "gatsby"
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import BackButton from "../components/subcomponents/BackButton"
+import DateFormatter from "../components/subcomponents/Date"
+import DisqusComments from "../components/subcomponents/DisqusComments"
 import HelmetWrapper from "../components/subcomponents/HelmetWrapper"
 
-export default function Template(props) {
-  console.log(props)
+export default function Template(props: {
+  data: {
+    markdownRemark: {
+      html: string
+      excerpt: string
+      frontmatter: {
+        slug: string
+        title: string
+        description: string
+        author: string
+        tags: string[]
+        date: string
+        excerpt: string
+        image: string
+      }
+      timeToRead: number
+    }
+    allMarkdownRemark: {
+      nodes: Array<{
+        frontmatter: {
+          author_id: string
+          avatar: string
+          bio: string
+          name: string
+          web: string
+        }
+      }>
+    }
+    site: {
+      siteMetadata: {
+        siteUrl: string
+      }
+    }
+  }
+}) {
   const { markdownRemark, allMarkdownRemark } = props.data // data.markdownRemark holds your post data
   const { frontmatter: page, html } = markdownRemark
 
   const author = allMarkdownRemark.nodes.find(({ frontmatter: userData }) => {
-    return (
-      userData.author_id === page.author ||
-      userData.author_id === page.author_id
-    )
+    return userData.author_id === page.author
   }).frontmatter
 
   return (
@@ -50,12 +82,26 @@ export default function Template(props) {
                   {markdownRemark.timeToRead} min
                 </p>
                 <p className="tags has-justify-content-flex-end">
-                  {page.tags.map(tag => (
-                    <span className="tag">{tag}</span>
+                  {page.tags.map((tag, index) => (
+                    <span className="tag" key={"tag-" + index}>
+                      {tag}
+                    </span>
                   ))}
                 </p>
 
-                {/* <p>{% include post/date.html date=page.date updated=page.updated %} <a className="has-text-grey-light" href="{site.url}/admin/#/collections/blog/entries/{ entry_path }">Edit</a></p>  */}
+                <p>
+                  {page.date && (
+                    <DateFormatter date={page.date}></DateFormatter>
+                  )}
+                  &nbsp;
+                  <a
+                    className="has-text-grey-light"
+                    href="/admin/#/collections/blog/entries/{ entry_path }"
+                  >
+                    Edit
+                  </a>
+                </p>
+                {/* <p>{% include post/date.html date=page.date updated=page.updated %}</p>  */}
               </div>
             </div>
           </div>
@@ -74,8 +120,47 @@ export default function Template(props) {
           {/* {% if site.owner.disqus-shortname and page.comments == true %} */}
           {/* <section id="disqus_thread"></section><!-- /#disqus_thread --> */}
           {/* {% endif %} */}
+          <DisqusComments title={page.title}></DisqusComments>
         </article>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: `
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "${page.title}",
+      "description": "${page.excerpt}",
+  ${
+    page.image &&
+    `
+  "image": {
+    "@type": "ImageObject",
+    "url": "${props.data.site.siteMetadata.siteUrl}${page.image}"
+    },
+  `
+  }
+  "author": {
+  "@type": "Person",
+  "name": "${author.name}"
+  },
+  "publisher": {
+  "@type": "Organization",
+  "name": "Bright Inventions",
+  "logo": {
+  "@type": "ImageObject",
+  "url": "https://brightinventions.pl/images/logo-small.png",
+  "width": 157,
+  "height": 60
+  }
+  },
+  "datePublished": "${page.date}"
+  }
+        `,
+        }}
+      />
     </Layout>
   )
 }
@@ -83,6 +168,7 @@ export const pageQuery = graphql`
   query($fileAbsolutePath: String!) {
     markdownRemark(fileAbsolutePath: { eq: $fileAbsolutePath }) {
       html
+      excerpt
       frontmatter {
         slug
         title
@@ -90,6 +176,7 @@ export const pageQuery = graphql`
         author
         tags
         date
+        image
       }
       timeToRead
     }
@@ -102,6 +189,11 @@ export const pageQuery = graphql`
           name
           web
         }
+      }
+    }
+    site {
+      siteMetadata {
+        siteUrl
       }
     }
   }

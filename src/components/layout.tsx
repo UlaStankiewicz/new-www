@@ -6,7 +6,7 @@ import { TopNavigation } from "./subcomponents/TopNavigation"
 
 const Layout: React.FC<{ className?: string }> = ({ children, className }) => {
   return (
-    <div className={className || ""}>
+    <div className={"layout-container " + className}>
       <HelmetWrapper
         title="Software Development Company"
         description="The best custom software development company in Poland. Through mobile apps and complex backend systems to emerging technology solutions we are creating success stories for startups, consultancy agencies as well as mid-size organisations across multiple industries including FinTech, Blockchain, HealthTech, Retail, Logistics and more."

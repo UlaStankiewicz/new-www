@@ -15,11 +15,6 @@ export const Footer = () => {
               </a>
             </figure>
 
-            <script
-              type="text/javascript"
-              src="https://widget.clutch.co/static/js/widget.js"
-              async
-            ></script>
             <div
               className="clutch-widget content"
               data-url="https://widget.clutch.co"

@@ -1,0 +1,88 @@
+backend:
+  name: github
+  repo: bright/new-www
+  branch: gh-pages
+  base_url: https://github-auth.brightinventions.pl
+publish_mode: editorial_workflow
+site_url: https://brightinventions.pl/
+logo_url: https://brightinventions.pl/images/logo.png
+media_folder: "images"
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "_posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "members"
+        searchFields: ["name"]
+        valueField: "author_id"
+        displayFields: ["name", "author_id"]
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        allow_add: true
+      - {label: "Hidden", name: "hidden", widget: "boolean", default: false}
+      - {label: "Comments", name: "comments", widget: "boolean", default: true}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
+  - name: "members" # Used in routes, e.g., /admin/collections/blog
+    label: "Members" # Used in the UI
+    folder: "_members" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    identifier_field: name
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "member"}
+      - {label: "Author id", name: "author_id", widget: "string"}
+      - {label: "No longer with us", name: "ex", widget: "boolean", default: false}
+      - {label: "Slug", name: "slug", widget: "string", hint: "URL path"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Short Name", name: "short_name", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Website", name: "web", widget: "string", required: false}
+      - {label: "Avatar", name: "avatar", widget: "image", required: false}
+      - {label: "Twitter", name: "twitter", widget: "string", required: false}
+      - {label: "Github", name: "github", widget: "string", required: false}
+      - {label: "Stack Overflow", name: "stackoverflow", widget: "string", required: false}
+      - {label: "Full description", name: "body", widget: "markdown"}
+      - {label: "Redirect from", name: "redirect_from", widget: "list", allow_add: true, required: false}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
+  - name: "jobs" # Used in routes, e.g., /admin/collections/blog
+    label: "Jobs" # Used in the UI
+    folder: "_jobs" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "job"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Hours", name: "hours", widget: "string"}
+      - {label: "Salary", name: "salary", widget: "string"}
+      - {label: "Salary Min", name: "salary_min", widget: "number", required: false}
+      - {label: "Salary Max", name: "salary_max", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Redirect from", name: "redirect_from", widget: "list", allow_add: true, required: false}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
+      - {label: "Order", name: "order", widget: "number", required: true, valueType: 'int', min: 1, step: 1, default: 1}
+  - name: "projects" # Used in routes, e.g., /admin/collections/blog
+    label: "Projects" # Used in the UI
+    folder: "_projects" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "project"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Redirect from", name: "redirect_from", widget: "list", allow_add: true, required: false}
+      - {label: "Published", name: "published", widget: "boolean", default: true}

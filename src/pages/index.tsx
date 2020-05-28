@@ -1,33 +1,50 @@
 import { graphql } from "gatsby"
-import React from "react"
+import React, { useState } from "react"
+import { Carousel } from "react-responsive-carousel"
 import Layout from "../components/layout"
 import ProjectCard, {
   ProjectGraphql,
 } from "../components/subcomponents/ProjectCard"
+import { FormType, sendMail } from "../helpers/mail"
 import "../styles/_page-index.scss"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges },
   },
 }) => {
-  {
-    /* <script async>
-                (function () {
-                    const attachCarousel = () => {
-                        if (window.bulmaCarousel) {
-                            window.bulmaCarousel.attach('#clutch-carousel', {
-                                slidesToShow: 1,
-                                infinite: true
-                            })
-                        } else {
-                            setTimeout(attachCarousel, 500)
-                        }
-                    };
-                    attachCarousel()
-                }());
-            </script> */
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [checkedRules, setCheckedRules] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState(false)
+
+  const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const wrapValue = value => ({
+      value,
+    })
+    sendMail(
+      {
+        name: wrapValue(name),
+        email: wrapValue(email),
+        message: wrapValue(message),
+      },
+      FormType.contact
+    )
+      .then(() => {
+        setError(false)
+        setSuccess(true)
+      })
+      .catch(err => {
+        console.error(err)
+        setError(true)
+        setSuccess(false)
+      })
   }
+
   return (
     <Layout className="page-index">
       <section className="hero we-deliver">
@@ -140,7 +157,7 @@ const IndexPage = ({
         <div className="hero-body">
           <div className="container">
             <h1 className="title">why us?</h1>
-            <div id="clutch-carousel" className="carousel">
+            <Carousel className="carousel" showStatus={false}>
               <div className="carousel-item has-text-centered">
                 <p className="content is-size-4">
                   "(...) they delivered results very fast and were always very
@@ -169,7 +186,7 @@ const IndexPage = ({
                   Co-founder, Everytap, Poland
                 </div>
               </div>
-            </div>
+            </Carousel>
             <div className="section">
               <div className="level">
                 <a
@@ -240,7 +257,7 @@ const IndexPage = ({
       <section className="section">
         <div className="container">
           <h1 className="title">get in touch</h1>
-          <form data-form-type="contact" action="#">
+          <form data-form-type="contact" action="#" onSubmit={onFormSubmit}>
             <div className="field">
               <label className="label">Name</label>
               <div className="control">
@@ -249,6 +266,8 @@ const IndexPage = ({
                   type="text"
                   maxLength={256}
                   name="name"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
                   placeholder="i.e. Aretha Franklin"
                   required
                 />
@@ -262,6 +281,8 @@ const IndexPage = ({
                   className="input"
                   maxLength={256}
                   name="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                   placeholder="name@example.com"
                   required
                 />
@@ -272,6 +293,8 @@ const IndexPage = ({
               <div className="control">
                 <textarea
                   name="message"
+                  value={message}
+                  onChange={e => setMessage(e.target.value)}
                   maxLength={5000}
                   placeholder="your message here"
                   required
@@ -287,8 +310,10 @@ const IndexPage = ({
                     name="accept-policy"
                     value="yes"
                     required
+                    onChange={e => setCheckedRules(e.currentTarget.checked)}
+                    checked={checkedRules}
                   />
-                  &nbsp;I accept the{" "}
+                  &nbsp;I accept the&nbsp;
                   <a
                     href="/privacy-policy"
                     target="_blank"
@@ -301,18 +326,26 @@ const IndexPage = ({
             </div>
             <div className="field">
               <div className="control">
-                <button className="button is-primary" type="submit">
+                <button
+                  className="button is-primary"
+                  type="submit"
+                  disabled={!(checkedRules && name && email && message)}
+                >
                   Submit
                 </button>
               </div>
             </div>
           </form>
-          <div className="form-success has-text-success is-size-4">
-            Thank you! Your submission has been received!
-          </div>
-          <div className="form-error has-text-warning is-size-4">
-            Oops! Something went wrong while submitting the form.
-          </div>
+          {success && (
+            <div className="has-text-success is-size-4">
+              Thank you! Your submission has been received!
+            </div>
+          )}
+          {error && (
+            <div className="has-text-warning is-size-4">
+              Oops! Something went wrong while submitting the form.
+            </div>
+          )}
         </div>
       </section>
     </Layout>

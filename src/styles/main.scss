@@ -34,3 +34,7 @@
 @import "blog";
 @import "rouge_style_github";
 @import "rouge_style_bright";
+
+.layout-container {
+  margin-top: $navbar-height;
+}

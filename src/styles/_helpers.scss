@@ -20,17 +20,16 @@
 }
 
 .has-justify-content-flex-end {
-  justify-content: flex-end;
+  justify-content: flex-end !important;
   &.tags {
     .tag:not(:last-child) {
       margin-right: 0;
     }
     .tag:not(:first-child) {
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
   }
 }
-
 
 .has-direction-column {
   flex-direction: column;
@@ -45,7 +44,6 @@
   width: 128px;
   height: 64px;
 }
-
 
 .image.is-150x150 {
   width: 150px;

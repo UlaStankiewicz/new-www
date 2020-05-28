@@ -4,6 +4,8 @@ module.exports = {
     description:
       "The best custom software development company in Poland. Through mobile apps and complex backend systems to emerging technology solutions we are creating success stories for startups, consultancy agencies as well as mid-size organisations across multiple industries including FinTech, Blockchain, HealthTech, Retail, Logistics and more.",
     author: "Bright team",
+    disqusShortname: "brightinventions",
+    siteUrl: "https://brightinventions.pl/",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -21,7 +23,7 @@ module.exports = {
         background_color: "#663399",
         theme_color: "#663399",
         display: "minimal-ui",
-        // icon: "src/images/gatsby-icon.png", // This path is relative to the root of the site.
+        icon: "src/images/favicon.png", // This path is relative to the root of the site.
       },
     },
     {
@@ -64,6 +66,12 @@ module.exports = {
       options: {
         path: `${__dirname}/data`,
         name: `data`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `your-disqus-shortname`,
       },
     },
 

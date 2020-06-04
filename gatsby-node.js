@@ -31,16 +31,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const postsPerPage = 10
   const numPages = Math.ceil(posts.length / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
-    console.log({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: path.resolve("./src/templates/BlogListTemplate.tsx"),
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        numPages,
-        currentPage: i + 1,
-      },
-    })
     createPage({
       path: i === 0 ? `/blog` : `/blog/${i + 1}`,
       component: path.resolve("./src/templates/BlogListTemplate.tsx"),
@@ -81,10 +71,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       const name = node.fileAbsolutePath.split("/").pop().replace(".md", "")
-      if (layout === "post") {
-        // console.log(node)
-      }
-      // console.log(path + "/" + name)
       createPage({
         path: path + "/" + name,
         component: template,
@@ -115,13 +101,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
-    // const value = createFilePath({ node, getNode })
-    // console.log(
-    //   "slug",
-    //   value,
-    //   "/" +
-    //     node.fileAbsolutePath.split("/").splice(-2).join("/").replace(".md", "")
-    // )
     createNodeField({
       node,
       name: `slug`,

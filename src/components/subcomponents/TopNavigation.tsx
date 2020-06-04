@@ -1,4 +1,15 @@
 import React from "react"
+import styled from "styled-components"
+
+const NavbarStart = styled.div`
+  flex: 1;
+`
+
+const NavbarItem = styled.a`
+  justify-content: center;
+  text-transform: none;
+  color: black;
+`
 
 export const TopNavigation = () => {
   return (
@@ -9,14 +20,14 @@ export const TopNavigation = () => {
     >
       <div className="container">
         <div className="navbar-brand">
-          <a className="navbar-item" href="/">
+          <a className="navbar-item is-expanded" href="/">
             <img
               className="navbar-logo"
               src="/images/bright_inventions_logo_500-01.png"
             />
           </a>
 
-          <div className="navbar-item is-hidden-desktop">
+          <div className="navbar-item is-expanded is-hidden-desktop">
             <div className="buttons">
               <a className="button is-primary" href="/start-project">
                 <strong>Estimate project</strong>
@@ -38,33 +49,36 @@ export const TopNavigation = () => {
         </div>
 
         <div id="topNavBar" className="navbar-menu">
-          <div className="navbar-start">
-            <a className="navbar-item" href="/about-us">
-              About us
-            </a>
+          <NavbarStart className="navbar-start">
+            <NavbarItem className="navbar-item is-expanded" href="/about-us">
+              why us
+            </NavbarItem>
 
-            <a className="navbar-item" href="/what-we-offer">
-              What we offer
-            </a>
+            <NavbarItem
+              className="navbar-item is-expanded"
+              href="/what-we-offer"
+            >
+              what we do
+            </NavbarItem>
 
-            <a className="navbar-item" href="/projects">
-              Projects
-            </a>
+            <NavbarItem className="navbar-item is-expanded" href="/projects">
+              case studies
+            </NavbarItem>
 
-            <a className="navbar-item" href="/career">
-              Career
-            </a>
+            <NavbarItem className="navbar-item is-expanded" href="/career">
+              career
+            </NavbarItem>
 
-            <a className="navbar-item" href="/blog">
-              Blog
-            </a>
-          </div>
+            <NavbarItem className="navbar-item is-expanded" href="/blog">
+              blog
+            </NavbarItem>
+          </NavbarStart>
 
           <div className="navbar-end is-hidden-mobile">
             <div className="navbar-item">
               <div className="buttons">
                 <a className="button is-primary" href="/start-project">
-                  <strong>Estimate project</strong>
+                  <strong>estimate project</strong>
                 </a>
               </div>
             </div>

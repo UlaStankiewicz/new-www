@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 
 export interface ProjectGraphql {
   title: string
@@ -12,9 +13,15 @@ interface ProjectCardProps {
   project: ProjectGraphql
 }
 
+const Container = styled.div`
+  height: 100%;
+  margin-bottom: 4em;
+  box-shadow: none;
+`
+
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="card project-card">
+    <Container className="card">
       <div className="card-content has-text-centered">
         <a href={project.slug}>
           <figure className="image is-inline-block">
@@ -25,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </h2>
         </a>
       </div>
-    </div>
+    </Container>
   )
 }
 

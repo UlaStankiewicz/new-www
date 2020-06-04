@@ -27,15 +27,13 @@ $navbar-item-img-max-height: 67px;
   }
 }
 .navbar-item {
-  text-transform: uppercase;
-
   .button {
+    text-transform: uppercase;
     border-radius: 0;
   }
 
   .button.is-primary {
-    box-shadow: 0 1px 13px 0 rgba(247,147,30,.6)
+    box-shadow: 0 1px 13px 0 rgba(247, 147, 30, 0.6);
+    color: black;
   }
 }
-
-

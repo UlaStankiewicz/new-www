@@ -28,12 +28,15 @@
 @import "page-index";
 @import "page-career";
 @import "team-members";
-@import "projects";
 @import "carousel";
 @import "footer";
 @import "blog";
 @import "rouge_style_github";
 @import "rouge_style_bright";
+
+// @import "fonts";
+@import url("https://use.typekit.net/agb7ril.css");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 .layout-container {
   margin-top: $navbar-height;

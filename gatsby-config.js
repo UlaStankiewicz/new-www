@@ -74,6 +74,15 @@ module.exports = {
         shortname: `your-disqus-shortname`,
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
+    `gatsby-plugin-styled-components`,
 
     `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality

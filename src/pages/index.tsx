@@ -1,13 +1,40 @@
 import { graphql } from "gatsby"
 import React, { useState } from "react"
 import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import styled from "styled-components"
+import BackArrow from "../assets/backArrowBlack.svg"
+import NextArrow from "../assets/nextArrowBlack.svg"
+import ImageSpacer from "../components/home/ImageSpacer"
+import OurServices from "../components/home/OurServices"
 import Layout from "../components/layout"
 import ProjectCard, {
   ProjectGraphql,
 } from "../components/subcomponents/ProjectCard"
 import { FormType, sendMail } from "../helpers/mail"
 import "../styles/_page-index.scss"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import SuccessStories from "../components/home/SuccessStories"
+
+const IndicatorActive = styled.li`
+  color: black;
+  font-size: 4em;
+  display: inline-block;
+`
+
+const IndicatorInactive = styled(IndicatorActive)`
+  cursor: pointer;
+  opacity: 0.42;
+`
+
+const Arrow = styled.div`
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 15px);
+  width: 30;
+  height: 30;
+  cursor: pointer;
+  display: inline-block;
+`
 
 const IndexPage = ({
   data: {
@@ -56,16 +83,51 @@ const IndexPage = ({
                   let's create software that <span>matters</span>
                 </h1>
               </div>
-              <div className="column is-ula-with-andrzej-background">
-                <figure className="image">
-                  <img src="/images/ula_with_andrzej.jpg" alt="" />
-                </figure>
+              <div className="column is-two-fifths">
+                <Carousel
+                  showStatus={false}
+                  showThumbs={false}
+                  renderIndicator={(onClickHandler, isSelected) => {
+                    if (isSelected) {
+                      return <IndicatorActive>&#x2022;</IndicatorActive>
+                    }
+                    return (
+                      <IndicatorInactive onClick={onClickHandler}>
+                        &#x2022;
+                      </IndicatorInactive>
+                    )
+                  }}
+                  renderArrowPrev={onClickHandler => (
+                    <Arrow style={{ left: 15 }}>
+                      <BackArrow onClick={onClickHandler} />
+                    </Arrow>
+                  )}
+                  renderArrowNext={onClickHandler => (
+                    <Arrow style={{ right: 15 }}>
+                      <NextArrow onClick={onClickHandler} />
+                    </Arrow>
+                  )}
+                >
+                  {edges.map((v, index) => (
+                    <div
+                      // className="column is-one-third"
+                      key={index + "project"}
+                    >
+                      <ProjectCard
+                        project={v.node.frontmatter as ProjectGraphql}
+                      />
+                    </div>
+                  ))}
+                </Carousel>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="hero experts-in">
+      <OurServices />
+      <ImageSpacer />
+      <SuccessStories />
+      {/* <section className="hero experts-in">
         <div className="hero-body">
           <div className="container">
             <h1 className="title">bright experts in</h1>
@@ -134,13 +196,7 @@ const IndexPage = ({
         <div className="hero-body">
           <div className="container">
             <h1 className="title">our success stories</h1>
-            <div className="columns is-multiline">
-              {edges.map((v, index) => (
-                <div className="column is-one-third" key={index + "project"}>
-                  <ProjectCard project={v.node.frontmatter as ProjectGraphql} />
-                </div>
-              ))}
-            </div>
+            <div className="columns is-multiline"></div>
 
             <div className="level">
               <div className="level-item has-text-centered">
@@ -347,7 +403,7 @@ const IndexPage = ({
             </div>
           )}
         </div>
-      </section>
+      </section> */}
     </Layout>
   )
 }

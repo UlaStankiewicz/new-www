@@ -56,35 +56,17 @@
   font-weight: 700;
 }
 
-.experts-in {
-  .subtitle,
-  .button {
-    font-weight: 500;
-  }
-
-  .button {
-    margin-top: 2rem;
-  }
-}
-
-.bright-minds,
-.why-us {
-  min-height: 25rem;
-}
-
-.bright-minds {
-  background-image: url("#{$images-url-base}/images/b-552_light_purple.jpg?resize.imageType=jpeg");
-  background-size: cover;
-  background-position: 0 0;
-  background-attachment: fixed;
-  transition: opacity 200ms ease;
-}
-
-.success-stories {
-}
-
 .carousel {
   .slide {
     background: transparent !important;
   }
+}
+
+.input,
+.textarea {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #d3d3d3;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 2rem;
 }

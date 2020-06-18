@@ -1,14 +1,18 @@
-
-
 .carousel {
   padding: 0.5rem;
   overflow: hidden;
   .carousel-item {
-    padding: 2rem;
+    padding: 2rem 10rem;
+    p {
+      margin-top: 2em;
+    }
+    .author {
+      margin: 2em 0;
+    }
   }
 
-  .slider-navigation-previous, .slider-navigation-next {
+  .slider-navigation-previous,
+  .slider-navigation-next {
     background: none;
   }
-
 }

@@ -33,7 +33,6 @@ const JobsOpenAll: React.FC = () => {
     }
   `)
   const jobs = edges.map(v => v.node)
-  console.log(jobs)
 
   return (
     <div className="open-positions ">
